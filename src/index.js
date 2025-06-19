@@ -1,4 +1,8 @@
 import "./styles.css";
-import { greeting } from "./greeting.js";
+import { loadInitialLayout } from './function/DOMControl'
+import { createValidForm } from './item/formPage'
 
-console.log(greeting);
+//import jsonData from './item/postal-codes.json' assert { type: 'json' };
+
+loadInitialLayout();
+createValidForm();
