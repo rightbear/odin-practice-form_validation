@@ -1,0 +1,30 @@
+{
+  "email": {
+    "required": "Please enter a valid e-mail address.",
+    "type": "Valid format is 'example@email.com'",
+    "pattern":
+      "Please enter a valid email address in the format 'example@email.com'."
+  },
+
+  "country": {
+    "required": "Please select a country."
+  },
+
+  "postal": {
+    "required": "Please enter a valid postal-code.",
+    "pattern":
+      "Zip code must be up to 10 alphanumeric characters and may include spaces and/or a hyphen."
+  },
+
+  "password": {
+    "required": "Please set up a password between 8 and 20 characters.",
+    "pattern":
+      "Password must be 8-20 characters long and can include uppercase, lowercase letters, numbers, and special characters (#?!@$%^&*-).",
+    "length": "Please enter within 8 to 20 characters."
+  },
+
+  "confirm": {
+    "required": "Please re-enter your password for confirmation.",
+    "mismatch": "Passwords do not match. Please try again."
+  }
+}

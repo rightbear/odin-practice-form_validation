@@ -5,6 +5,9 @@ export function createValidForm() {
     validForm.id = 'validForm';
     validForm.noValidate = true;
 
+    const formHeader = document.createElement('h1');
+    formHeader.textContent = 'Validate Me';
+
     const emailField = document.createElement('div');
     emailField.id = 'emailField';
     const emailLabel = document.createElement('label');
@@ -14,8 +17,11 @@ export function createValidForm() {
     emailInput.type = 'email';
     emailInput.name = 'email';
     emailInput.id = 'user_email';
+    emailInput.autocomplete = 'on';
     emailInput.required = true;
-    emailField.append(emailLabel, emailInput);
+    const emailMessage = document.createElement('span');
+    emailMessage.classList.add('validationMsg');
+    emailField.append(emailLabel, emailInput, emailMessage);
 
     const countryField = document.createElement('div');
     countryField.id = 'countryField';
@@ -25,21 +31,34 @@ export function createValidForm() {
     const countrySelect = document.createElement('select');
     countrySelect.name = 'country';
     countrySelect.id = 'user_country';
+    countrySelect.autocomplete = 'on';
     countrySelect.required = true;
-    countryField.append(countryLabel, countrySelect);
+    const countrySelectOptText = document.createElement("option");
+    countrySelectOptText.value = "";
+    countrySelectOptText.disabled = true;
+    countrySelectOptText.selected = true;
+    countrySelectOptText.textContent = "Please click to select your country";
+    countrySelect.appendChild(countrySelectOptText);
+    const countryMessage = document.createElement('span');
+    countryMessage.classList.add('validationMsg');
+    countryField.append(countryLabel, countrySelect, countryMessage);
 
     const postalCodeField = document.createElement('div');
     postalCodeField.id = 'postalCodeField';
     const postalCodeLabel = document.createElement('label');
     postalCodeLabel.setAttribute('for', 'user_postalCode');
-    postalCodeLabel.textContent = 'Postal Code (Required, unless the selected country have no code)';
+    postalCodeLabel.textContent = 'Postal Code (Required, if selected country has code)';
     const postalCodeInput = document.createElement('input');
     postalCodeInput.type = 'text';
     postalCodeInput.name = 'postalCode';
     postalCodeInput.id = 'user_postalCode';
+    postalCodeInput.autocomplete = 'on';
     postalCodeInput.required = true;
     postalCodeInput.disabled= true;
-    postalCodeField.append(postalCodeLabel, postalCodeInput);
+    postalCodeInput.placeholder = "The field is disbaled if not needed..."
+    const postalCodeMessage = document.createElement('span');
+    postalCodeMessage.classList.add('validationMsg');
+    postalCodeField.append(postalCodeLabel, postalCodeInput, postalCodeMessage);
 
     const passwordField = document.createElement('div');
     passwordField.id = 'passwordField';
@@ -50,8 +69,13 @@ export function createValidForm() {
     passwordInput.type = 'password';
     passwordInput.name = 'password';
     passwordInput.id = 'user_password';
+    passwordInput.min = 8;
+    passwordField.max = 20;
+    passwordInput.autocomplete = 'on';
     passwordInput.required = true;
-    passwordField.append(passwordLabel, passwordInput);
+    const passwordMessage = document.createElement('span');
+    passwordMessage.classList.add('validationMsg');
+    passwordField.append(passwordLabel, passwordInput, passwordMessage);
 
     const confirmField = document.createElement('div');
     confirmField.id = 'confirmField';
@@ -62,8 +86,11 @@ export function createValidForm() {
     confirmInput.type = 'password';
     confirmInput.name = 'confirm';
     confirmInput.id = 'user_pconfirm';
+    confirmInput.autocomplete = 'on';
     confirmInput.required = true;
-    confirmField.append(confirmLabel, confirmInput);
+    const confirmMessage = document.createElement('span');
+    confirmMessage.classList.add('validationMsg');
+    confirmField.append(confirmLabel, confirmInput, confirmMessage);
 
     const buttonSet = document.createElement('div');
     buttonSet.id = 'buttonSet';
@@ -75,49 +102,10 @@ export function createValidForm() {
     submitBtn.textContent = 'Submit';
     const resetBtn = document.createElement('button');
     resetBtn.id = 'resetBtn';
-    resetBtn.textContent = 'resetBtn';
+    resetBtn.textContent = 'Reset';
     buttonSet.append(submitBtn, resetBtn);
 
-    validForm.append(emailField, countryField, postalCodeField, passwordField, confirmField, buttonSet);
+    validForm.append(formHeader, emailField, countryField, postalCodeField, passwordField, confirmField, buttonSet);
 
     content.appendChild(validForm);
 }
-
-
-/*
-
-<form id="validForm" novalidate>
-      <h1>Valid Me</h1>
-
-        <div id="emailField">
-            <label for="user_email">Email Address (Required)</label>
-            <input type="email" name="email" id="user_email" required>
-        </div>
-        
-        <div id="countryField">
-            <label for="user_country">Country (Required)</label>
-            <input type="text" name="country" id="user_country" required>
-        </div>
-        
-        <div id="postalCodeField">
-            <label for="user_postalCode">Postal Code (Required, unless the country doesn't have code)</label>
-            <select name="postalCode" id="user_postalCode" required></select>
-        </div>
-
-        <div id="passwordField">
-            <label for="user_password">Password (Required)</label>
-            <input type="password" name="password" id="user_password" required>
-        </div>
-
-        <div id="confirmField">
-            <label for="user_confirm">Confirm Password</label>
-            <input type="password" name="confirm" id="user_confirm" required>
-        </div>
-
-        <div id="buttonSet">
-            <button type="submit" id="submitBtn" value="submit" autofocus>Submit</button>
-            <button id="resetBtn">Reset</button>
-        </div>
-</form>
-
-*/
