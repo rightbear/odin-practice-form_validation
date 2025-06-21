@@ -1224,19 +1224,19 @@
     "Regex": ""
 }, {
     "Note": "",
-    "Country": "Singapore",
+    "Country": "Singapore (2 code)",
     "ISO": "SG",
     "Format": "NN",
     "Regex": "^\\d{2}$"
 }, {
     "Note": "",
-    "Country": "Singapore",
+    "Country": "Singapore (4 code)",
     "ISO": "SG",
     "Format": "NNNN",
     "Regex": "^\\d{4}$"
 }, {
     "Note": "Each building has its own unique postcode.",
-    "Country": "Singapore",
+    "Country": "Singapore (6 code)",
     "ISO": "SG",
     "Format": "NNNNNN",
     "Regex": "^\\d{6}$"

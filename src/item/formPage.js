@@ -17,6 +17,7 @@ export function createValidForm() {
     emailInput.type = 'email';
     emailInput.name = 'email';
     emailInput.id = 'user_email';
+    emailInput.placeholder = "example@email.com";
     emailInput.autocomplete = 'on';
     emailInput.required = true;
     const emailMessage = document.createElement('span');
@@ -66,11 +67,12 @@ export function createValidForm() {
     passwordLabel.setAttribute('for', 'user_password');
     passwordLabel.textContent = 'Password (Required)';
     const passwordInput = document.createElement('input');
-    passwordInput.type = 'password';
-    passwordInput.name = 'password';
+    passwordInput.type = 'text';
+    passwordInput.name = 'password';  
     passwordInput.id = 'user_password';
-    passwordInput.min = 8;
-    passwordField.max = 20;
+    passwordInput.minLength = 8;
+    passwordInput.maxLength = 20;
+    passwordInput.setAttribute('pattern', '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,20}$');
     passwordInput.autocomplete = 'on';
     passwordInput.required = true;
     const passwordMessage = document.createElement('span');
@@ -83,9 +85,9 @@ export function createValidForm() {
     confirmLabel.setAttribute('for', 'user_confirm');
     confirmLabel.textContent = 'Confirm Password';
     const confirmInput = document.createElement('input');
-    confirmInput.type = 'password';
+    confirmInput.type = 'text';
     confirmInput.name = 'confirm';
-    confirmInput.id = 'user_pconfirm';
+    confirmInput.id = 'user_confirm';
     confirmInput.autocomplete = 'on';
     confirmInput.required = true;
     const confirmMessage = document.createElement('span');

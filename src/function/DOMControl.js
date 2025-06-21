@@ -1,5 +1,5 @@
 import { createValidForm } from '../item/formPage'
-import jsonData from '../item/postalCodes.json' with { type: 'json' };
+import postCodeData from '../item/postalCodes.json' with { type: 'json' };
 
 export function loadInitialLayout() {
     const main = document.createElement("div");
@@ -12,16 +12,16 @@ export function loadInitialLayout() {
 }
 
 function addCountryOption() {
-    //const countrySelect = document.querySelector('#user_country');
-
-    /*
-    jsonData.forEach(countryInfo) {
+    const countrySelect = document.querySelector('#user_country');
+    
+    postCodeData.forEach((countryInfo) => {
         const countryOption = document.createElement("option");
         countryOption.textContent = countryInfo['Country'];
-    }
-    */
+        countrySelect.appendChild(countryOption);
+    });
 }
 
 export function loadFormPage(){
     createValidForm();
+    addCountryOption();
 }

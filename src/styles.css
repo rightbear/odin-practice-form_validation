@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 
+  font-family: Arial, Helvetica, sans-serif;
+
   --form-background: PaleGreen;
   --form-border: ForestGreen;
   --header-background: SeaGreen;
@@ -11,17 +13,13 @@
   --field-input: DarkGreen;
 }
 
-body {
-  height: 100vh;
-}
-
 .main {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 }
 
 .content {
-  height: 100%;
+  min-height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -33,12 +31,13 @@ form {
   grid-template-rows: repeat(13, 1fr);
 
   min-height: 500px;
-  height: 90%;
+  max-width: 550px;
   border-radius: 10px;
   background-color: var(--form-background);
 
   padding: 10px 20px 20px 20px;
   border: 5px solid var(--form-border);
+  margin: 20px;
 }
 
 form h1 {
@@ -64,7 +63,7 @@ form #passwordField,
 form #confirmField {
   display: flex;
   flex-direction: column;
-  margin: 10px 5px 5px 5px;
+  margin: 20px 5px 5px 5px;
 }
 
 form #emailField {
@@ -102,7 +101,7 @@ form input,
 form select {
   height: 2rem;
 
-  padding-left: 5px;
+  padding: 0px 5px;
   border: 2px solid var(--field-input);
   border-radius: 5px;
   font-size: 1rem;
@@ -110,4 +109,10 @@ form select {
 
 form input:focus {
   box-shadow: inset 0 0 0 1px var(--field-input);
+}
+
+form span {
+  height: 2rem;
+
+  padding: 5px;
 }
