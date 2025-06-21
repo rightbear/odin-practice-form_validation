@@ -1,4 +1,5 @@
 import { createValidForm } from '../item/formPage'
+import { createValidPage } from '../item/validPage'
 import postCodeData from '../item/postalCodes.json' with { type: 'json' };
 
 export function loadInitialLayout() {
@@ -21,15 +22,21 @@ function addCountryOption() {
     });
 }
 
-export function loadFormPage(){
-    createValidForm();
-    addCountryOption();
-}
-
 function clearContent() {
     const content = document.querySelector('.content');
 
     while (content.firstChild) {
-        content.removeChild(element.firstChild);
+        content.removeChild(content.firstChild);
     }
+}
+
+export function loadFormPage(){
+    clearContent();
+    createValidForm();
+    addCountryOption();
+}
+
+export function loadValidPage(){
+    clearContent();
+    createValidPage();
 }

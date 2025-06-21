@@ -1,7 +1,8 @@
-import { comparePassword, showError, showCorrect, showMessage } from './pageLogic';
+import { comparePassword, showMessage } from './pageLogic';
+import { loadFormPage, loadValidPage } from './DOMControl';
 import postCodeData from '../item/postalCodes.json' with { type: 'json' };
 
-export function changePostalStateEvent (){
+export function changePostalFieldEvent (){
     const countrySelect = document.querySelector('#user_country');
     const postalCodeInput = document.querySelector('#user_postalCode');
     const postalCodeMsg = document.querySelector('#user_postalCode + span');
@@ -24,10 +25,11 @@ export function changePostalStateEvent (){
     })
 }
 
-export function addValidationMsgEvent(){
+export function addValidationFormEvent(){
 
     const allFields = document.querySelectorAll('input, select');
     const validForm = document.querySelector('#validForm');
+    const resetBtn = document.querySelector('#resetBtn');
 
     allFields.forEach((fieldElement) => {
 
@@ -64,10 +66,20 @@ export function addValidationMsgEvent(){
         })
 
         if(isFormValid) {
-            console.log('Form is valid!');
-        }
-        else {
-            console.log('Form is invalid');
+            loadValidPage();
+            addSuccessPageEvent();
         }
     });
+
+    
+}
+
+export function addSuccessPageEvent() {
+    const formBtn = document.querySelector('#formBtn');
+
+    formBtn.addEventListener('click', () => {
+        loadFormPage();
+        changePostalFieldEvent();
+        addValidationFormEvent();
+    })
 }

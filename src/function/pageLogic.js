@@ -12,7 +12,7 @@ export function comparePassword (fieldElement) {
     return true;
 }
 
-export function showError(fieldElement, fieldMessage) {
+function showError(fieldElement, fieldMessage) {
     if (fieldElement.validity.valueMissing) {
         // If it's empty
         fieldMessage.textContent = messageData[`${fieldElement.name}`]['required'];
@@ -50,7 +50,7 @@ export function showError(fieldElement, fieldMessage) {
     fieldMessage.classList.add('invalidMsg');
 }
 
-export function showCorrect(fieldElement, fieldMessage) {
+function showCorrect(fieldElement, fieldMessage) {
     // If the value is checkedand passed
     fieldMessage.textContent = messageData[`${fieldElement.name}`]['correct'];
 

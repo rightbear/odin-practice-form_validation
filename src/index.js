@@ -1,8 +1,8 @@
 import "./styles.css";
 import { loadInitialLayout, loadFormPage } from './function/DOMControl'
-import { changePostalStateEvent, addValidationMsgEvent } from './function/eventHandler'
+import { changePostalFieldEvent, addValidationFormEvent } from './function/eventHandler'
 
 loadInitialLayout();
 loadFormPage();
-changePostalStateEvent();
-addValidationMsgEvent();
+changePostalFieldEvent();
+addValidationFormEvent();
