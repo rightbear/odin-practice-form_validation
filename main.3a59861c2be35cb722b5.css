@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  --form-background: PaleGreen;
+  --form-border: ForestGreen;
+  --header-background: SeaGreen;
+  --header-font: white;
+  --field-label: DarkGreen;
+  --field-input: DarkGreen;
+  --field-valid: RoyalBlue;
+  --field-invalid: FireBrick;
+  --button-background: SeaGreen;
+  --button-hover: #04aa6d;
+  --success-font: ForestGreen;
+}
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.content {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 500px;
+  width: 500px;
+  border-radius: 10px;
+  background-color: var(--form-background);
+
+  padding: 10px 20px 20px 20px;
+  border: 5px solid var(--form-border);
+  margin: 20px;
+}
+
+form h1 {
+  width: fit-content;
+  background-color: var(--header-background);
+  color: var(--header-font);
+
+  padding: 5px 10px;
+  border-radius: 5px;
+  justify-self: center;
+  margin: 20px auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form #emailField,
+form #countryField,
+form #passwordField,
+form #confirmField {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: 100px;
+}
+
+form #passwordField {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: 105px;
+}
+
+form #postalCodeField {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: 120px;
+}
+
+form label {
+  color: var(--field-label);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+form input,
+form select {
+  height: 2rem;
+
+  padding: 0px 5px;
+  border: 2px solid var(--field-input);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form input.validField,
+form select.validField {
+  border: 4px solid var(--field-valid);
+}
+
+form input.invalidField,
+form select.invalidField {
+  border: 4px solid var(--field-invalid);
+}
+
+form input:focus {
+  box-shadow: inset 0 0 0 1px var(--field-input);
+}
+
+form input:disabled {
+  border: 2px solid var(--field-input);
+}
+
+form span {
+  height: 2.5rem;
+
+  padding: 5px 5px 0px 5px;
+  font-size: 15px;
+}
+
+form #user_postalCode + span {
+  height: 3.5rem;
+
+  padding: 5px;
+}
+
+form span.validMsg {
+  color: var(--field-valid);
+}
+
+form span.invalidMsg {
+  color: var(--field-invalid);
+}
+
+#buttonSet {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#buttonSet button,
+#restartBtn {
+  background-color: var(--button-background);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#buttonSet button:hover,
+#restartBtn:hover {
+  background-color: var(--button-hover);
+}
+
+#validPage {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  padding: 20px;
+}
+
+#successMsg {
+  color: var(--success-font);
+}
+
+#successImg {
+  filter: invert(38%) sepia(100%) saturate(404%) hue-rotate(71deg)
+    brightness(92%) contrast(93%);
+  height: 500px;
+}
+
+
+/*# sourceMappingURL=main.3a59861c2be35cb722b5.css.map*/
