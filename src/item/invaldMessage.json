@@ -13,15 +13,13 @@
   "postalCode": {
     "correct": "The postal-code format is OK.",
     "required": "Please enter a valid postal-code.",
-    "pattern":
-      "The postal-code format of selected country: "
+    "pattern": "The postal-code format of selected country: "
   },
 
   "password": {
     "correct": "The password format is OK.",
     "required": "Please set up a password between 8 and 20 characters.",
-    "pattern":
-      "Must include number, uppercase & lowercase letter, and special symbol(@$!%*?&)",
+    "pattern": "Must include number, uppercase & lowercase letter, and special symbol(@$!%*?&)",
     "length": "Please enter within 8 to 20 characters."
   },
 

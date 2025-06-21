@@ -14,7 +14,7 @@
   --field-valid: RoyalBlue;
   --field-invalid: FireBrick;
   --button-background: SeaGreen;
-  --button-hover: #04AA6D;
+  --button-hover: #04aa6d;
   --success-font: ForestGreen;
 }
 
@@ -62,7 +62,7 @@ form h1 {
 
 form #emailField,
 form #countryField,
-form #passwordField, 
+form #passwordField,
 form #confirmField {
   display: flex;
   flex-direction: column;
@@ -150,7 +150,7 @@ form span.invalidMsg {
 }
 
 #buttonSet button,
-#formBtn {
+#restartBtn {
   background-color: var(--button-background);
   border: none;
   border-radius: 5px;
@@ -161,14 +161,12 @@ form span.invalidMsg {
   display: inline-block;
   font-size: 20px;
   cursor: pointer;
-  float: left;
 }
 
 #buttonSet button:hover,
-#formBtn:hover {
+#restartBtn:hover {
   background-color: var(--button-hover);
 }
-
 
 #validPage {
   display: flex;
@@ -186,6 +184,7 @@ form span.invalidMsg {
 }
 
 #successImg {
-  filter: invert(38%) sepia(100%) saturate(404%) hue-rotate(71deg) brightness(92%) contrast(93%);
+  filter: invert(38%) sepia(100%) saturate(404%) hue-rotate(71deg)
+    brightness(92%) contrast(93%);
   height: 500px;
 }
