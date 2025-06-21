@@ -11,6 +11,10 @@
   --header-font: white;
   --field-label: DarkGreen;
   --field-input: DarkGreen;
+  --field-valid: RoyalBlue;
+  --field-invalid: FireBrick;
+  --button-background: SeaGreen;
+  --button-hover: #04AA6D;
 }
 
 .main {
@@ -27,11 +31,11 @@
 }
 
 form {
-  display: grid;
-  grid-template-rows: repeat(13, 1fr);
+  display: flex;
+  flex-direction: column;
 
   min-height: 500px;
-  max-width: 550px;
+  width: 500px;
   border-radius: 10px;
   background-color: var(--form-background);
 
@@ -41,8 +45,6 @@ form {
 }
 
 form h1 {
-  grid-row: 1 / 2;
-
   width: fit-content;
   background-color: var(--header-background);
   color: var(--header-font);
@@ -50,6 +52,7 @@ form h1 {
   padding: 5px 10px;
   border-radius: 5px;
   justify-self: center;
+  margin: 20px auto;
 
   display: flex;
   justify-content: center;
@@ -58,36 +61,26 @@ form h1 {
 
 form #emailField,
 form #countryField,
-form #postalCodeField,
-form #passwordField,
+form #passwordField, 
 form #confirmField {
   display: flex;
   flex-direction: column;
-  margin: 20px 5px 5px 5px;
-}
-
-form #emailField {
-  grid-row: 2 / 4;
-}
-
-form #countryField {
-  grid-row: 4 / 6;
-}
-
-form #postalCodeField {
-  grid-row: 6 / 8;
+  margin: 5px;
+  height: 100px;
 }
 
 form #passwordField {
-  grid-row: 8 / 10;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: 105px;
 }
 
-form #confirmField {
-  grid-row: 10 / 12;
-}
-
-form #buttonSet {
-  grid-row: 12 / 14;
+form #postalCodeField {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: 120px;
 }
 
 form label {
@@ -107,12 +100,68 @@ form select {
   font-size: 1rem;
 }
 
+form input.validField,
+form select.validField {
+  border: 4px solid var(--field-valid);
+}
+
+form input.invalidField,
+form select.invalidField {
+  border: 4px solid var(--field-invalid);
+}
+
 form input:focus {
   box-shadow: inset 0 0 0 1px var(--field-input);
 }
 
+form input:disabled {
+  border: 2px solid var(--field-input);
+}
+
 form span {
-  height: 2rem;
+  height: 2.5rem;
+
+  padding: 5px 5px 0px 5px;
+  font-size: 15px;
+}
+
+form #user_postalCode + span {
+  height: 3.5rem;
 
   padding: 5px;
+}
+
+form span.validMsg {
+  color: var(--field-valid);
+}
+
+form span.invalidMsg {
+  color: var(--field-invalid);
+}
+
+#buttonSet {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+#buttonSet button {
+  background-color: var(--button-background);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+  float: left;
+}
+
+#buttonSet button:hover {
+  background-color: var(--button-hover);
 }

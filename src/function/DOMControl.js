@@ -25,3 +25,11 @@ export function loadFormPage(){
     createValidForm();
     addCountryOption();
 }
+
+function clearContent() {
+    const content = document.querySelector('.content');
+
+    while (content.firstChild) {
+        content.removeChild(element.firstChild);
+    }
+}

@@ -48,7 +48,7 @@ export function createValidForm() {
     postalCodeField.id = 'postalCodeField';
     const postalCodeLabel = document.createElement('label');
     postalCodeLabel.setAttribute('for', 'user_postalCode');
-    postalCodeLabel.textContent = 'Postal Code (Required, if selected country has code)';
+    postalCodeLabel.textContent = 'Postal Code (Required)';
     const postalCodeInput = document.createElement('input');
     postalCodeInput.type = 'text';
     postalCodeInput.name = 'postalCode';
@@ -56,7 +56,7 @@ export function createValidForm() {
     postalCodeInput.autocomplete = 'on';
     postalCodeInput.required = true;
     postalCodeInput.disabled= true;
-    postalCodeInput.placeholder = "The field is disbaled if not needed."
+    postalCodeInput.placeholder = "The field is disbaled if selected country has no postal-code"
     const postalCodeMessage = document.createElement('span');
     postalCodeMessage.classList.add('validationMsg');
     postalCodeField.append(postalCodeLabel, postalCodeInput, postalCodeMessage);
