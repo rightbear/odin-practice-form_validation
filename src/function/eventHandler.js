@@ -1,4 +1,4 @@
-import { comparePassword, showMessage } from './pageLogic';
+import { comparePassword, showMessage, resetField } from './pageLogic';
 import { loadFormPage, loadValidPage } from './DOMControl';
 import postCodeData from '../item/postalCodes.json' with { type: 'json' };
 
@@ -29,7 +29,6 @@ export function addValidationFormEvent(){
 
     const allFields = document.querySelectorAll('input, select');
     const validForm = document.querySelector('#validForm');
-    const resetBtn = document.querySelector('#resetBtn');
 
     allFields.forEach((fieldElement) => {
 
@@ -71,7 +70,16 @@ export function addValidationFormEvent(){
         }
     });
 
-    
+    validForm.addEventListener('reset', (event) => {
+        event.preventDefault(); 
+
+        allFields.forEach((fieldElement) => {
+
+            const fieldMessage = document.querySelector(`#${fieldElement.id} + span`);
+
+            resetField(fieldElement, fieldMessage);
+        })
+    });
 }
 
 export function addSuccessPageEvent() {

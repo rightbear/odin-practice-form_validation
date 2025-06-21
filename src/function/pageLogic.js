@@ -79,3 +79,22 @@ export function showMessage(fieldElement, fieldMessage) {
         showCorrect(fieldElement, fieldMessage);
     }
 }
+
+export function resetField(fieldElement, fieldMessage) {
+    if(fieldElement.id === 'user_email' 
+        || fieldElement.id === 'user_password'
+        || fieldElement.id === 'user_confirm') {
+            fieldElement.value = '';
+    } else if (fieldElement.id === 'user_country') {
+        fieldElement.options[0].selected = true
+    } else if (fieldElement.id === 'user_postalCode') {
+        fieldElement.value = '';
+        fieldElement.disabled=  true;
+        fieldElement.placeholder = "The field is disbaled if selected country has no postal-code";
+    }
+    fieldElement.classList.remove('validField');
+    fieldElement.classList.remove('invalidField');
+
+    fieldMessage.textContent = '';
+    fieldMessage.classList.remove('validMsg', 'invalidMsg');
+}

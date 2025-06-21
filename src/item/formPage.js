@@ -67,7 +67,7 @@ export function createValidForm() {
     passwordLabel.setAttribute('for', 'user_password');
     passwordLabel.textContent = 'Password (Required)';
     const passwordInput = document.createElement('input');
-    passwordInput.type = 'text';
+    passwordInput.type = 'password';
     passwordInput.name = 'password';  
     passwordInput.id = 'user_password';
     passwordInput.minLength = 8;
@@ -86,7 +86,7 @@ export function createValidForm() {
     confirmLabel.setAttribute('for', 'user_confirm');
     confirmLabel.textContent = 'Confirm Password';
     const confirmInput = document.createElement('input');
-    confirmInput.type = 'text';
+    confirmInput.type = 'password';
     confirmInput.name = 'confirm';
     confirmInput.id = 'user_confirm';
     confirmInput.autocomplete = 'on';
@@ -105,7 +105,9 @@ export function createValidForm() {
     submitBtn.autofocus = true;
     submitBtn.textContent = 'Submit';
     const resetBtn = document.createElement('button');
+    resetBtn.type = 'reset';
     resetBtn.id = 'resetBtn';
+    resetBtn.value = 'reset';
     resetBtn.textContent = 'Reset';
     buttonSet.append(submitBtn, resetBtn);
 
