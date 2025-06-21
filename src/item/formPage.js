@@ -17,7 +17,7 @@ export function createValidForm() {
     emailInput.type = 'email';
     emailInput.name = 'email';
     emailInput.id = 'user_email';
-    emailInput.placeholder = "example@email.com";
+    emailInput.placeholder = 'Input your email address, like "example@email.com"';
     emailInput.autocomplete = 'on';
     emailInput.required = true;
     const emailMessage = document.createElement('span');
@@ -38,7 +38,7 @@ export function createValidForm() {
     countrySelectOptText.value = "";
     countrySelectOptText.disabled = true;
     countrySelectOptText.selected = true;
-    countrySelectOptText.textContent = "Please click to select your country";
+    countrySelectOptText.textContent = "Click to select your country";
     countrySelect.appendChild(countrySelectOptText);
     const countryMessage = document.createElement('span');
     countryMessage.classList.add('validationMsg');
@@ -56,7 +56,7 @@ export function createValidForm() {
     postalCodeInput.autocomplete = 'on';
     postalCodeInput.required = true;
     postalCodeInput.disabled= true;
-    postalCodeInput.placeholder = "The field is disbaled if not needed..."
+    postalCodeInput.placeholder = "The field is disbaled if not needed."
     const postalCodeMessage = document.createElement('span');
     postalCodeMessage.classList.add('validationMsg');
     postalCodeField.append(postalCodeLabel, postalCodeInput, postalCodeMessage);
@@ -75,6 +75,7 @@ export function createValidForm() {
     passwordInput.setAttribute('pattern', '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&])[A-Za-z0-9@$!%*?&]{8,20}$');
     passwordInput.autocomplete = 'on';
     passwordInput.required = true;
+    passwordInput.placeholder = 'Enter your password';
     const passwordMessage = document.createElement('span');
     passwordMessage.classList.add('validationMsg');
     passwordField.append(passwordLabel, passwordInput, passwordMessage);
@@ -90,6 +91,7 @@ export function createValidForm() {
     confirmInput.id = 'user_confirm';
     confirmInput.autocomplete = 'on';
     confirmInput.required = true;
+    confirmInput.placeholder = 'Reenter the same password as above';
     const confirmMessage = document.createElement('span');
     confirmMessage.classList.add('validationMsg');
     confirmField.append(confirmLabel, confirmInput, confirmMessage);
