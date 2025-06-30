@@ -1,4 +1,4 @@
-# odin_template
+# odin-practice-form_validation
 
 This is practice of "Form Validation with JavaScript" in The Odin Project
 
